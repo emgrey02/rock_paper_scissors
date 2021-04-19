@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <body></body>
+    <script>
+
+        let computerPlay = () => {
+            let randomNum = Math.floor(Math.random() * 3);
+            return (randomNum == 0) ? "rock"
+            : (randomNum == 1) ? "paper"
+            : "scissors";
+        };
+
+
+        let playRound = (playerSelection, computerSelection) => {
+            if (playerSelection.toLowerCase() === "rock") {
+                return (computerSelection === "scissors") 
+                    ? "You win! Rock beats Scissors"
+                    : (computerSelection === "paper")
+                    ? "You lose! Paper beats Rock"
+                    : (computerSelection === "rock")
+                    ? "You both chose Rock..."
+                    : null;
+            } else if (playerSelection.toLowerCase() === "paper") {
+                return (computerSelection === "rock") 
+                    ? "You win! Paper beats Rock"
+                    : (computerSelection === "scissors")
+                    ? "You lose! Scissors beat Paper"
+                    :  (computerSelection === "paper")
+                    ? "You both chose Paper..."
+                    : null;
+            } else {
+                return (computerSelection === "paper")
+                    ? "You win! Scissors beat Paper"
+                    : (computerSelection === "rock") 
+                    ? "You lose! Rock beats Scissors"
+                    : (computerSelection === "scissors")
+                    ? "You both chose Scissors..."
+                    : null;
+                
+            }
+        };
+        
+
+        let game = () => {
+            let wins = 0;
+            let losses = 0;
+            
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Rock, paper, or scissors?");
+                let result = playRound(playerSelection, computerPlay());
+                console.log(result);
+                if (result.indexOf("win") !== -1) {
+                    wins++;
+                } else if (result.indexOf("lose") !== -1) {
+                    losses++;
+                }
+            }
+
+            return (wins > losses)
+                ? "You won!"
+                : (losses > wins)
+                ? "The computer won :("
+                : "You and the computer tied!!";
+
+        };
+
+        console.log(game());
+    </script>
+</html>
