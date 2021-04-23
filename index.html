@@ -1,69 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <body></body>
-    <script>
-
-        let computerPlay = () => {
-            let randomNum = Math.floor(Math.random() * 3);
-            return (randomNum == 0) ? "rock"
-            : (randomNum == 1) ? "paper"
-            : "scissors";
-        };
-
-
-        let playRound = (playerSelection, computerSelection) => {
-            if (playerSelection.toLowerCase() === "rock") {
-                return (computerSelection === "scissors") 
-                    ? "You win! Rock beats Scissors"
-                    : (computerSelection === "paper")
-                    ? "You lose! Paper beats Rock"
-                    : (computerSelection === "rock")
-                    ? "You both chose Rock..."
-                    : null;
-            } else if (playerSelection.toLowerCase() === "paper") {
-                return (computerSelection === "rock") 
-                    ? "You win! Paper beats Rock"
-                    : (computerSelection === "scissors")
-                    ? "You lose! Scissors beat Paper"
-                    :  (computerSelection === "paper")
-                    ? "You both chose Paper..."
-                    : null;
-            } else {
-                return (computerSelection === "paper")
-                    ? "You win! Scissors beat Paper"
-                    : (computerSelection === "rock") 
-                    ? "You lose! Rock beats Scissors"
-                    : (computerSelection === "scissors")
-                    ? "You both chose Scissors..."
-                    : null;
-                
-            }
-        };
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+        <title>Rock. Paper. Scissors.</title>
         
+    </head>
+    <body>
+        <h1>ROCK. PAPER. SCISSORS. SHOOT.</h1>
+        <h2>FIRST TO 5 WINS.</h2>
+        <div class='score-tally'>
+            <span id='you' >YOU</span>
+            <span id='computer'>COMPUTER</span>
+            <span class='player-score'>0</span>
+            <span id='divider'>-</span>
+            <span class='computer-score'>0</span>
+        </div>
+        <div class="options">
+            <img id='rock' src='images/hand_rock.svg'>
+            <img id='paper' src='images/paper.svg'>
+            <img id='scissors' src='images/hand_scissors.svg'>
+        </div>
+        <div class='round-result'>Welcome! Rock, Paper, or scissors??</div>
+        <button class='newgame'>NEW GAME</button>
+    </body>
 
-        let game = () => {
-            let wins = 0;
-            let losses = 0;
-            
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Rock, paper, or scissors?");
-                let result = playRound(playerSelection, computerPlay());
-                console.log(result);
-                if (result.indexOf("win") !== -1) {
-                    wins++;
-                } else if (result.indexOf("lose") !== -1) {
-                    losses++;
-                }
-            }
-
-            return (wins > losses)
-                ? "You won!"
-                : (losses > wins)
-                ? "The computer won :("
-                : "You and the computer tied!!";
-
-        };
-
-        console.log(game());
-    </script>
+    <script type='text/javascript' src='script.js'></script>
+    
+        
 </html>
