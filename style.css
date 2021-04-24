@@ -6,29 +6,10 @@ body {
     box-sizing: border-box;
 }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
+@media screen and (max-width: 480px) {
+    img {
+        width: auto;
+    }
 }
 
 h1 {
@@ -87,6 +68,7 @@ h2 {
 
 .options {
     display: flex;
+    height: auto;
     width: auto;
     margin: auto;
     justify-content: space-evenly;
