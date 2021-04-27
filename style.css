@@ -6,21 +6,21 @@ body {
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 480px) {
-    img {
-        width: auto;
+@media screen and (max-width: 600px) {
+    .options {
+        flex-wrap: wrap;
     }
 }
 
 h1 {
     text-align: center;
     padding: 50px 0 20px 0;
-    font-size: 50px;
+    font-size: 80px;
 }
 
 h2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     margin-bottom: 100px;
 }
 
@@ -94,7 +94,7 @@ img:hover {
 .round-result {
     margin-top: 30px;
     color:rgba(2, 78, 53, 0.719);
-    font-size: 20px;
+    font-size: 40px;
     text-align: center;
     padding: 20px;
     font-weight: bolder;
@@ -104,7 +104,7 @@ img:hover {
 .newgame {
     box-sizing: border-box;
     font-size: 20px;
-    margin: 0 auto;
+    margin: 70px auto;
     padding: 10px;
     border-radius: 10px;
     display: block;
